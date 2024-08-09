@@ -219,7 +219,7 @@ const Page = () => {
             )}
             <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">MOUNICA'S CROSSWORD</h1>
             <div className="flex flex-col lg:flex-row justify-center items-start space-y-4 lg:space-y-0 lg:space-x-8 w-full max-w-6xl">
-                <div className="crossword-container bg-white w-full p-2 sm:p-4 shadow-lg">
+                <div className="crossword-container">
                     <div className="crossword-grid flex flex-col justify-center text-center">
                         <div className='mx-auto border-2 border-black'>
                             {userGrid.map((row, rowIndex) => (
@@ -229,16 +229,18 @@ const Page = () => {
                             ))}
                         </div>
                     </div>
-                    <div className='flex flex-wrap justify-center sm:justify-between space-x-2 sm:space-x-4 mt-4'>
-                        <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={resetGrid}>
-                            Reset
-                        </Button>
-                        <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkThis}>
-                            Check This
-                        </Button>
-                        <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkAll}>
-                            Check All
-                        </Button>
+                    <div className='flex flex-wrap  justify-center sm:justify-between space-x-2 sm:space-x-4 mt-4'>
+                        <div className='mx-auto space-x-4'>
+                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={resetGrid}>
+                                Reset
+                            </Button>
+                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkThis}>
+                                Check This
+                            </Button>
+                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkAll}>
+                                Check All
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <div className="clues w-full lg:w-64 bg-white p-2 sm:p-4 shadow-lg">
