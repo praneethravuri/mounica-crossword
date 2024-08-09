@@ -117,7 +117,7 @@ const Page = () => {
         }
     }, [direction, moveFocus]);
 
-    const handleKeyDown = useCallback((event: any, rowIndex: number, colIndex: number) => {
+    const handleKeyDown = useCallback((event, rowIndex: number, colIndex: number) => {
         switch (event.key) {
             case 'ArrowRight':
                 moveFocus(rowIndex, colIndex, 0, 1);
@@ -155,14 +155,14 @@ const Page = () => {
         checkPuzzleComplete();
     }, [userGrid]);
 
-    const showClue = (number: string, direction: any) => {
+    const showClue = (number: string, direction) => {
         const currDirection = direction ? "across" : "down";
         if (number) {
             setClue(`${number} ${currDirection.charAt(0).toUpperCase() + currDirection.slice(1)}: ${CLUES[currDirection][number]}`);
         }
     }
 
-    const renderCell = useCallback((cell: any, rowIndex: number, colIndex: number) => (
+    const renderCell = useCallback((cell, rowIndex: number, colIndex: number) => (
         <div
             key={`${rowIndex}-${colIndex}`}
             className={`
