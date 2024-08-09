@@ -92,6 +92,7 @@ const Page = () => {
 
         while (newRow >= 0 && newRow < GRID_HEIGHT && newCell >= 0 && newCell < GRID_WIDTH) {
             if (GRID[newRow][newCell].letter !== ' ') {
+                // @ts-ignore
                 inputRefs.current[`${newRow}-${newCell}`]?.focus();
                 return;
             }
@@ -117,6 +118,7 @@ const Page = () => {
         }
     }, [direction, moveFocus]);
 
+    // @ts-ignore 
     const handleKeyDown = useCallback((event, rowIndex: number, colIndex: number) => {
         switch (event.key) {
             case 'ArrowRight':
@@ -155,13 +157,16 @@ const Page = () => {
         checkPuzzleComplete();
     }, [userGrid]);
 
+    // @ts-ignore 
     const showClue = (number: string, direction) => {
         const currDirection = direction ? "across" : "down";
         if (number) {
+            // @ts-ignore 
             setClue(`${number} ${currDirection.charAt(0).toUpperCase() + currDirection.slice(1)}: ${CLUES[currDirection][number]}`);
         }
     }
 
+    // @ts-ignore 
     const renderCell = useCallback((cell, rowIndex: number, colIndex: number) => (
         <div
             key={`${rowIndex}-${colIndex}`}
@@ -176,6 +181,7 @@ const Page = () => {
         >
             {cell.letter !== ' ' && (
                 <input
+                    // @ts-ignore 
                     ref={el => inputRefs.current[`${rowIndex}-${colIndex}`] = el}
                     type="text"
                     maxLength={1}
