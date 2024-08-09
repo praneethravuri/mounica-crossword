@@ -166,9 +166,9 @@ const Page = () => {
         <div
             key={`${rowIndex}-${colIndex}`}
             className={`
-                w-8 h-8 sm:w-10 sm:h-10 border border-black flex justify-center items-center m-0.5 sm:m-1
+                w-8 h-8 sm:w-10 sm:h-10 border-[0.5px] border-gray-300 flex justify-center items-center
                 ${cell.letter === ' ' ? 'bg-black' : 'bg-white'}
-                ${isPuzzleComplete ? 'bg-green-100' : ''}
+                ${isPuzzleComplete ? 'bg-green-50' : ''}
                 relative
             `}
             onClick={() => showClue(cell.direction, direction)}
@@ -180,16 +180,17 @@ const Page = () => {
                     type="text"
                     maxLength={1}
                     className={`
-                        w-full h-full text-center focus:outline-none text-base sm:text-lg font-serif focus:bg-yellow-300
+                        w-full h-full text-center focus:outline-none text-base sm:text-lg font-serif
                         ${isChecked
                             ? cell.isRight
                                 ? 'text-green-700'
                                 : 'text-red-700'
                             : cell.isRight
                                 ? 'text-green-700'
-                                : 'text-black'
+                                : 'text-gray-800'
                         }
-                        ${isPuzzleComplete ? 'text-green-700 bg-green-100' : 'bg-white'}
+                        ${isPuzzleComplete ? 'text-green-700 bg-green-50' : 'bg-white'}
+                        focus:bg-yellow-100 transition-colors duration-200
                     `}
                     value={cell.userInput}
                     onChange={(e) => handleLetterChange(rowIndex, colIndex, e.target.value)}
@@ -199,15 +200,14 @@ const Page = () => {
             )}
             <div className="cell-direction absolute top-0 left-0.5">
                 {cell.direction && (
-                    <p className='text-[0.5rem] sm:text-[0.6rem] text-black font-bold'>{cell.direction}</p>
+                    <p className='text-[0.5rem] sm:text-[0.6rem] text-gray-600 font-bold'>{cell.direction}</p>
                 )}
             </div>
         </div>
     ), [handleLetterChange, handleKeyDown, isPuzzleComplete, isChecked, direction]);
 
-
     return (
-        <div className="flex flex-col items-center min-h-screen bg-amber-50 py-4 sm:py-8 px-2 sm:px-4 font-serif">
+        <div className="flex flex-col items-center min-h-screen bg-amber-50  py-8 px-4 font-serif">
             {isPuzzleComplete && confettiVisible && (
                 <Confetti
                     width={windowSize.width}
@@ -217,11 +217,11 @@ const Page = () => {
                     tweenDuration={10000}
                 />
             )}
-            <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">MOUNICA&lsquo;S CROSSWORD</h1>
-            <div className="flex flex-col lg:flex-row justify-center items-start space-y-4 lg:space-y-0 lg:space-x-8 w-full max-w-6xl">
-                <div className="crossword-container">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-gray-800 tracking-tight">MOUNICA'S CROSSWORD</h1>
+            <div className="flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-12 w-full max-w-6xl">
+                <div className="crossword-container bg-white p-6 rounded-lg shadow-lg">
                     <div className="crossword-grid flex flex-col justify-center text-center">
-                        <div className='mx-auto border-2 border-black'>
+                        <div className='mx-auto border-2 border-gray-800'>
                             {userGrid.map((row, rowIndex) => (
                                 <div key={rowIndex} className="flex">
                                     {row.map((cell, colIndex) => renderCell(cell, rowIndex, colIndex))}
@@ -229,42 +229,40 @@ const Page = () => {
                             ))}
                         </div>
                     </div>
-                    <div className='flex flex-wrap  justify-center sm:justify-between space-x-2 sm:space-x-4 mt-4'>
-                        <div className='mx-auto space-x-4'>
-                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={resetGrid}>
-                                Reset
-                            </Button>
-                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkThis}>
-                                Check This
-                            </Button>
-                            <Button variant="outline" className='border-black text-black hover:bg-gray-200 text-xs sm:text-sm mb-2 sm:mb-0' onClick={checkAll}>
-                                Check All
-                            </Button>
-                        </div>
+                    <div className='flex justify-center space-x-4 mt-6'>
+                        <Button variant="outline" className='border-gray-800 text-gray-800 hover:bg-gray-200 text-sm' onClick={resetGrid}>
+                            Reset
+                        </Button>
+                        <Button variant="outline" className='border-gray-800 text-gray-800 hover:bg-gray-200 text-sm' onClick={checkThis}>
+                            Check This
+                        </Button>
+                        <Button variant="outline" className='border-gray-800 text-gray-800 hover:bg-gray-200 text-sm' onClick={checkAll}>
+                            Check All
+                        </Button>
                     </div>
                 </div>
-                <div className="clues w-full lg:w-64 bg-white p-2 sm:p-4 shadow-lg">
-                    <h2 className='font-bold text-lg sm:text-xl mb-2'>Clues</h2>
-                    <div className="w-full text-left">
-                        <p className="font-medium text-sm sm:text-base">{clue}</p>
+                <div className="clues w-full lg:w-80 bg-white p-6 rounded-lg shadow-lg">
+                    <h2 className='font-bold text-2xl mb-4 text-gray-800'>Clues</h2>
+                    <div className="w-full text-left mb-6">
+                        <p className="font-medium text-base text-gray-700">{clue}</p>
                     </div>
-                    <div className="mt-4">
-                        <h3 className="font-bold">Across</h3>
+                    <div className="mb-6">
+                        <h3 className="font-bold text-xl mb-2 text-gray-800">Across</h3>
                         {Object.entries(CLUES.across).map(([number, clueText]) => (
-                            <p key={`across-${number}`} className="text-xs sm:text-sm">{number}. {clueText}</p>
+                            <p key={`across-${number}`} className="text-sm mb-2 text-gray-700">{number}. {clueText}</p>
                         ))}
                     </div>
-                    <div className="mt-4">
-                        <h3 className="font-bold">Down</h3>
+                    <div>
+                        <h3 className="font-bold text-xl mb-2 text-gray-800">Down</h3>
                         {Object.entries(CLUES.down).map(([number, clueText]) => (
-                            <p key={`down-${number}`} className="text-xs sm:text-sm">{number}. {clueText}</p>
+                            <p key={`down-${number}`} className="text-sm mb-2 text-gray-700">{number}. {clueText}</p>
                         ))}
                     </div>
                 </div>
             </div>
             {isPuzzleComplete && (
-                <div className="mt-4 sm:mt-8 text-xl sm:text-2xl font-bold text-green-700 text-center">
-                    Congratulations! You&lsquo;ve completed the crossword!
+                <div className="mt-8 text-2xl font-bold text-green-700 text-center">
+                    Congratulations! You've completed the crossword!
                 </div>
             )}
         </div>
