@@ -50,23 +50,6 @@ const Page = () => {
         setIsChecked(false);
     }, []);
 
-    const handleLetterChange = useCallback((rowIndex, colIndex, value) => {
-        const upperCaseValue = value.toUpperCase();
-        setUserGrid(prev => {
-            const newGrid = [...prev];
-            newGrid[rowIndex] = [...newGrid[rowIndex]];
-            newGrid[rowIndex][colIndex] = { ...newGrid[rowIndex][colIndex], userInput: upperCaseValue, isRight: false };
-            return newGrid;
-        });
-        setIsChecked(false);
-
-        if (direction) {
-            moveFocus(rowIndex, colIndex, 0, 1);
-        } else {
-            moveFocus(rowIndex, colIndex, 1, 0);
-        }
-    }, [direction]);
-
     const checkAll = useCallback(() => {
         const newUserGrid = userGrid.map((row, rowIndex) =>
             row.map((cell, colIndex) => ({
@@ -117,6 +100,23 @@ const Page = () => {
         }
     }, []);
 
+    const handleLetterChange = useCallback((rowIndex, colIndex, value) => {
+        const upperCaseValue = value.toUpperCase();
+        setUserGrid(prev => {
+            const newGrid = [...prev];
+            newGrid[rowIndex] = [...newGrid[rowIndex]];
+            newGrid[rowIndex][colIndex] = { ...newGrid[rowIndex][colIndex], userInput: upperCaseValue, isRight: false };
+            return newGrid;
+        });
+        setIsChecked(false);
+
+        if (direction) {
+            moveFocus(rowIndex, colIndex, 0, 1);
+        } else {
+            moveFocus(rowIndex, colIndex, 1, 0);
+        }
+    }, [direction, moveFocus]);
+
     const handleKeyDown = useCallback((event, rowIndex, colIndex) => {
         switch (event.key) {
             case 'ArrowRight':
@@ -148,7 +148,7 @@ const Page = () => {
             setIsPuzzleComplete(isComplete);
             if (isComplete) {
                 setConfettiVisible(true);
-                setTimeout(() => setConfettiVisible(false), 10000);  // Hide confetti after 10 seconds
+                setTimeout(() => setConfettiVisible(false), 10000);
             }
         }
 
@@ -213,11 +213,11 @@ const Page = () => {
                     width={windowSize.width}
                     height={windowSize.height}
                     recycle={false}
-                    numberOfPieces={2000}
+                    numberOfPieces={3000}
                     tweenDuration={10000}
                 />
             )}
-            <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">MOUNICA'S CROSSWORD</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">MOUNICA&lsquo;S CROSSWORD</h1>
             <div className="flex flex-col lg:flex-row justify-center items-start space-y-4 lg:space-y-0 lg:space-x-8 w-full max-w-6xl">
                 <div className="crossword-container">
                     <div className="crossword-grid flex flex-col justify-center text-center">
@@ -264,7 +264,7 @@ const Page = () => {
             </div>
             {isPuzzleComplete && (
                 <div className="mt-4 sm:mt-8 text-xl sm:text-2xl font-bold text-green-700 text-center">
-                    Congratulations! You've completed the crossword!
+                    Congratulations! You&lsquo;ve completed the crossword!
                 </div>
             )}
         </div>
