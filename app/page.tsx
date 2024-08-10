@@ -28,37 +28,30 @@ const GRID = [
 
     [{ letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'T', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'C', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'O', direction: "" }],
 
-    [{ letter: ' ', direction: "" }, { letter: 'L', direction: "13" }, { letter: 'A', direction: "" }, { letter: 'V', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }, { letter: 'D', direction: "" }, { letter: 'E', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: 'L', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'N', direction: "" }],
+    [{ letter: ' ', direction: "" }, { letter: 'L', direction: "12" }, { letter: 'A', direction: "" }, { letter: 'V', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }, { letter: 'D', direction: "" }, { letter: 'E', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: 'L', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'N', direction: "" }],
 
-    [{ letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'K', direction: "14" }, { letter: 'I', direction: "" }, { letter: 'T', direction: "" }, { letter: 'C', direction: "" }, { letter: 'H', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }],
+    [{ letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'K', direction: "13" }, { letter: 'I', direction: "" }, { letter: 'T', direction: "" }, { letter: 'C', direction: "" }, { letter: 'H', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }],
 
     [{ letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'I', direction: "" }]
 ];
 
 const CLUES = {
     "across": {
-        "1": "Housewarming",
-        "2": "Least used",
-        "3": "Blanks",
-        "5": "Seltzer",
-        "7": "Appliances",
-        "8": "Monthly",
-        "9": "Handyman",
-        "10": "McDonald",
-        "11": "Share",
-        "12": "Sandwiched houses"
+        "5": "The concept of a housewarming party started with guests bringing what?",
+        "6": "A car garage that isn't very functional",
+        "7": "What I share with my neighbors, not by choice",
+        "11": "Sandwiched Houses",
+        "12": "Flowering Plant",
+        "13": "What everyone thinks the least used room in the house will be?"
     },
     "down": {
-        "1": "Housewarming",
-        "2": "Least used",
-        "3": "Goes up",
-        "4": "Flowering plant",
-        "5": "Seltzer",
-        "6": "Lavender",
-        "7": "Appliances",
-        "8": "Monthly",
-        "9": "Handyman",
-        "10": "McDonald"
+        "1": "It keeps going up but buyers wish it would come down",
+        "2": "'Resident Handyman'",
+        "3": "Company with a seltzer sounding name that was bought by Zillow",
+        "4": "Monthly reminder that the bank owns your house",
+        "8": "I would _____ if the house's value _____s",
+        "9": "Italian appliance brand",
+        "10": "Kyle McDonald traded what up to a farmhouse in 14 trades"
     }
 };
 
@@ -257,7 +250,7 @@ const Page = () => {
                     tweenDuration={10000}
                 />
             )}
-            <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-gray-800 tracking-tight">MOUNICA'S CROSSWORD</h1>
+            <h1 className="text-4xl sm:text-4xl font-bold text-center text-gray-800 tracking-tight">UNPACKING THE PUZZLE</h1>
             <div className="flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-12 w-full max-w-6xl">
                 <div className="crossword-container bg-white p-6 rounded-lg shadow-lg w-full">
                     <div className="crossword-grid flex flex-col justify-center text-center w-full">
