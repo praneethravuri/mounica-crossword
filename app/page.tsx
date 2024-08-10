@@ -4,27 +4,61 @@ import { Button } from '@/components/ui/button';
 import Confetti from 'react-confetti';
 
 const GRID = [
-    [{ letter: 'S', direction: "1", isVerified: false }, { letter: 'T', direction: "2", isVerified: false }, { letter: 'A', direction: "3", isVerified: false }, { letter: 'R', direction: "4", isVerified: false }, { letter: 'T', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }],
-    [{ letter: 'P', direction: "", isVerified: false }, { letter: 'A', direction: "", isVerified: false }, { letter: 'G', direction: "", isVerified: false }, { letter: 'E', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }],
-    [{ letter: 'A', direction: "", isVerified: false }, { letter: 'B', direction: "", isVerified: false }, { letter: 'O', direction: "", isVerified: false }, { letter: 'U', direction: "", isVerified: false }, { letter: 'T', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }],
-    [{ letter: 'C', direction: "", isVerified: false }, { letter: 'L', direction: "", isVerified: false }, { letter: 'I', direction: "", isVerified: false }, { letter: 'C', direction: "", isVerified: false }, { letter: 'K', direction: "", isVerified: false }, { letter: 'S', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }],
-    [{ letter: 'E', direction: "", isVerified: false }, { letter: 'E', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: 'E', direction: "", isVerified: false }, { letter: 'E', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }],
-    [{ letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: 'L', direction: "", isVerified: false }, { letter: 'I', direction: "", isVerified: false }, { letter: 'N', direction: "", isVerified: false }, { letter: 'K', direction: "", isVerified: false }, { letter: 'S', direction: "", isVerified: false }],
-    [{ letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: 'P', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }, { letter: ' ', direction: "", isVerified: false }]
+    [{ letter: 'I', direction: "1" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'M', direction: "2" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'T', direction: "3" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'M', direction: "4" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }],
+
+    [{ letter: 'N', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'Y', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'F', direction: "5" }, { letter: 'I', direction: "" }, { letter: 'R', direction: "" }, { letter: 'E', direction: "" }, { letter: 'W', direction: "" }, { letter: 'O', direction: "" }, { letter: 'O', direction: "" }, { letter: 'D', direction: "" }, { letter: ' ', direction: "" }],
+
+    [{ letter: 'T', direction: "6" }, { letter: 'A', direction: "" }, { letter: 'N', direction: "" }, { letter: 'D', direction: "" }, { letter: 'E', direction: "" }, { letter: 'M', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'U', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }],
+
+    [{ letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'W', direction: "7" }, { letter: 'A', direction: "8" }, { letter: 'L', direction: "" }, { letter: 'L', direction: "" }, { letter: 'S', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'T', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }],
+
+    [{ letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'D', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "" }, { letter: ' ', direction: "" }, { letter: 'I', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'G', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }],
+
+    [{ letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: 'B', direction: "9" }],
+
+    [{ letter: 'S', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "10" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'G', direction: "" }, { letter: ' ', direction: "" }, { letter: 'E', direction: "" }],
+
+    [{ letter: 'T', direction: "11" }, { letter: 'O', direction: "" }, { letter: 'W', direction: "" }, { letter: 'N', direction: "" }, { letter: 'H', direction: "" }, { letter: 'O', direction: "" }, { letter: 'M', direction: "" }, { letter: 'E', direction: "" }, { letter: 'S', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: 'R', direction: "" }],
+
+    [{ letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'C', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'T', direction: "" }],
+
+    [{ letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'I', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }],
+
+    [{ letter: 'T', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'A', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'Z', direction: "" }],
+
+    [{ letter: 'E', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'T', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'C', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'O', direction: "" }],
+
+    [{ letter: ' ', direction: "" }, { letter: 'L', direction: "13" }, { letter: 'A', direction: "" }, { letter: 'V', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }, { letter: 'D', direction: "" }, { letter: 'E', direction: "" }, { letter: 'R', direction: "" }, { letter: ' ', direction: "" }, { letter: 'L', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'N', direction: "" }],
+
+    [{ letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'K', direction: "14" }, { letter: 'I', direction: "" }, { letter: 'T', direction: "" }, { letter: 'C', direction: "" }, { letter: 'H', direction: "" }, { letter: 'E', direction: "" }, { letter: 'N', direction: "" }],
+
+    [{ letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'P', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: ' ', direction: "" }, { letter: 'I', direction: "" }]
 ];
 
 const CLUES = {
     "across": {
-        "1": "Begin",
-        "2": "Web document",
-        "3": "Concerning",
-        "4": "Mouse actions",
+        "1": "Housewarming",
+        "2": "Least used",
+        "3": "Blanks",
+        "5": "Seltzer",
+        "7": "Appliances",
+        "8": "Monthly",
+        "9": "Handyman",
+        "10": "McDonald",
+        "11": "Share",
+        "12": "Sandwiched houses"
     },
     "down": {
-        "1": "Pasta dish",
-        "2": "Small table",
-        "3": "Primate",
-        "4": "Racket sport"
+        "1": "Housewarming",
+        "2": "Least used",
+        "3": "Goes up",
+        "4": "Flowering plant",
+        "5": "Seltzer",
+        "6": "Lavender",
+        "7": "Appliances",
+        "8": "Monthly",
+        "9": "Handyman",
+        "10": "McDonald"
     }
 };
 
@@ -225,8 +259,8 @@ const Page = () => {
             )}
             <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-gray-800 tracking-tight">MOUNICA'S CROSSWORD</h1>
             <div className="flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-12 w-full max-w-6xl">
-                <div className="crossword-container bg-white p-6 rounded-lg shadow-lg">
-                    <div className="crossword-grid flex flex-col justify-center text-center">
+                <div className="crossword-container bg-white p-6 rounded-lg shadow-lg w-full">
+                    <div className="crossword-grid flex flex-col justify-center text-center w-full">
                         <div className='mx-auto border-2 border-gray-800'>
                             {userGrid.map((row, rowIndex) => (
                                 <div key={rowIndex} className="flex">
